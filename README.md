@@ -29,3 +29,25 @@ forge test --match-path test/challenge-name.sol
 ### Rules & Tips
 - In all challenges you must use the account called attacker (unless otherwise specified).
 - In some cases, you may need to code and deploy custom smart contracts.
+
+### Writeups
+1 [Jpeg Sniper](./src/jpeg-sniper/README.md)
+2 Safu Vault
+3 Game Assets
+4 Free Lunch
+5 Safu Wallet
+6 Tasty Stake
+7 Freebie
+8 NFT Bonanza
+9 Inflationary Net Worth
+10 Governance Shenanigans
+11 Bonding Curve
+12 Flash Loaner
+13 Safu Swapper
+14 Side Entrance
+15 Malleable
+16 Extractoor
+17 Opyn Sesame
+18 Degen Jackpot
+19 Fatality
+20 Safu Lender
