@@ -3,12 +3,13 @@ pragma solidity ^0.8.0;
 
 // utilities
 import {Test} from "forge-std/Test.sol";
-import {console} from "forge-std/console.sol";
 // core contracts
 import {Token} from "src/other/Token.sol";
 import {SafuStrategy} from "src/safu-vault/SafuStrategy.sol";
 import {SafuVault,IStrategy} from "src/safu-vault/SafuVault.sol";
 
+//Import our attack contract
+import {Solver} from "src/safu-vault/Solver.sol";
 
 contract Testing is Test {
 
@@ -66,7 +67,12 @@ contract Testing is Test {
         vm.startPrank(attacker,attacker);
 
         // implement solution here
-
+        
+        // deploy attack contract
+        Solver solver = new Solver(address(safuVault),address(usdc));
+        // transfer USDC to the vault
+        usdc.transfer(address(solver), 10_000e18);
+        solver.solve();
         vm.stopPrank();
         validation();
     }

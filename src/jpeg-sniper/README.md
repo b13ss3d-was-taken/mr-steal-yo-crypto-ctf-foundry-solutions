@@ -49,3 +49,17 @@ The exploit is implemented in [`Solver.sol`](./Solver.sol), which:
 2. Mints maximum allowed NFTs
 3. Transfers NFTs to the attacker address
 4. Repeats until the entire collection is minted
+
+### Test Implementation
+For the test implementation, the following specific code was added to the `testChallengeExploit()` function in the [`1-jpeg-sniper.sol`](../../test/1-jpeg-sniper.sol) test file:
+
+```solidity
+new Solver(address(flatLaunchpeg), attacker); //Deploying the contract with its arguments
+```
+
+This single line deploys the Solver contract with the required arguments, which then executes the entire exploit in its constructor.
+
+Additionally, a validation check was added to verify that the exploit was performed in a single transaction:
+```solidity
+assertEq(vm.getNonce(attacker), 1); //added a validation to check if its solved in 1 transaction
+```

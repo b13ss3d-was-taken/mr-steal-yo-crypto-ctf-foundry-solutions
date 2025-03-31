@@ -32,7 +32,7 @@ forge test --match-path test/challenge-name.sol
 
 ### Writeups
 1 [Jpeg Sniper](./src/jpeg-sniper/README.md)
-2 Safu Vault
+2 [Safu Vault](./src/safu-vault/README.md)
 3 Game Assets
 4 Free Lunch
 5 Safu Wallet
